@@ -15,7 +15,7 @@ function updateDivisor(){
    if (xgrid.value>=1 & ygrid.value>=1){
         xdivisor = 1920/xgrid.value;
         ydivisor = 1080/ygrid.value;
-        canvaArray = Array.from({length: parseInt(ygrid.value)}, _ => new Array(parseInt(xgrid.value)).fill("area1"));
+        canvaArray = Array.from({length: parseInt(ygrid.value)}, _ => new Array(parseInt(xgrid.value)).fill("a1"));
    }
    squares = 1;
    svg.innerHTML = `<rect x="0" y="0"  width="640px" height="360px" onclick="popup(1)" id="rect1"/>`;
@@ -115,7 +115,7 @@ function split(crect, value, number){
     
     for (let i=Math.round(parseInt(crect2.getAttribute("y"))*3/ydivisor);i<Math.round(parseInt(crect2.getAttribute("height"))+parseInt(crect2.getAttribute("y")))*3/ydivisor;i++){
         for (let j=Math.round(parseInt(crect2.getAttribute("x"))*3/xdivisor);j<Math.round(parseInt(crect2.getAttribute("width"))+parseInt(crect2.getAttribute("x")))*3/xdivisor;j++){
-            canvaArray[Math.round(i)][Math.round(j)] = `area${number}`;
+            canvaArray[Math.round(i)][Math.round(j)] = `a${number}`;
         }
     }
 
@@ -146,7 +146,7 @@ function generateCSS(){
     }
     cssText += `<br/><span class="space"></span><span class="space">/</span>`;
     for (let i=0; i<canvaArray[0].length; i++){
-        cssText += " 1fr"
+        cssText += " 1fr";
     }
     cssText += ";<br/>}"
     for (let i=0; i<squares; i++){

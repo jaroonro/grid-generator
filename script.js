@@ -146,7 +146,7 @@ function generateCSS(){
     }
     cssText += `<br/><span class="space"></span><span class="space">/</span>`;
     for (let i=0; i<canvaArray[0].length; i++){
-        cssText += " 1fr"
+        cssText += " 1fr";
     }
     cssText += ";<br/>}"
     for (let i=0; i<squares; i++){

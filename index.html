@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <center><h1 style="color:violet; -webkit-text-stroke: 1px navy;">LAYOUT FROM LINE</h1></center>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <center style="padding: 0%">
+            <table>
+                <tr>
+                    <td><input type="number" id="xgrid" class="input" size="8%" autocomplete="off" oninput="updateDivisor()"></td>
+                    <td><text>x</text></td>
+                    <td><input type="number" id="ygrid" class="input" size="8%" autocomplete="off" oninput="updateDivisor()"></td>
+                </tr>
+            </table>
+            <p>Recommend number: 1, 2, 3, 4, 5, 6, 8, 10, 12, 20</p>
+            <div class="prototype">
+                <svg width="640px" height="360px" id="canva" style="cursor: n-resize">
+                    <rect x="0" y="0"  width="640px" height="360px" onclick="popup(1)" id="rect1"/>
+                </svg>
+            </div>
+            <div id="sizeSetting" class="modal">
+                <div class="modal-content">
+                    
+                    <h2>Set your size</h2>
+                    <span id="warning" style="color: red"></span>
+                    <table>
+                        <tr>
+                            <td id="sizeContext"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="number" id="firstBox" class="input" size="10%" oninput="changeValue(secondBox)" autocomplete="off"></td>
+                            <td><text>:</text></td>
+                            <td><input type="number" id="secondBox" class="input" size="10%" oninput="changeValue(firstBox)" autocomplete="off"></td>
+                            
+                        </tr>
+                    </table>
+                    <button onclick="calculateValue()">Summit</button>
+                </div>
+            </div>
+            <div class="options">
+                <text>Choose line type</text>
+                <table>
+                    <tr>
+                        <td><text>VERTI</text></td>
+                        <td><label class="switch" onclick="toggleType()">
+                            <input type="checkbox" id="myCheck">
+                            <span class="slider"></span>
+                          </label></td>
+                        <td><text>HORIZ</text></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p>&nbsp</p>
+
+            <button class="button-82-pushable" role="button" onclick="generateCode()">
+              <span class="button-82-shadow"></span>
+              <span class="button-82-edge"></span>
+              <span class="button-82-front text">
+                Generate Code
+              </span>
+            </button>
+
+            <p>&nbsp</p>
+            <h2 style="visibility: hidden" >HTML</h2>
+           
+            <div id="html" class="codeBox" style="visibility: hidden"></div>
+            
+            <h2 style="visibility: hidden" >CSS</h2>
+            
+            <div id="css" class="codeBox" style="visibility: hidden"></div>
+                
+            <table>
+                <td padd><img src="/images/cat.png"  width="200px"></td>
+                <td width="50%"></td>
+                <td><img src="/images/cat2.png"  width="200px"></td>
+                
+            </table>   
+        </center>
+        
+        <script src="script.js"></script>
+        
+    </body>
+</html>

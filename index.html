@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
-        <center><h1 style="color:violet; -webkit-text-stroke: 0.5px lightskyblue;">LAYOUT FROM LINE</h1></center>
+        <center><h1 style="color:violet; -webkit-text-stroke: 0.5px lightskyblue;">Grid Generator</h1></center>
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
@@ -26,13 +26,14 @@
                     <span id="warning" style="color: red"></span>
                     <table>
                         <tr>
-                            <td id="sizeContext"></td>
+                            <td id="sizeContext" colspan="5"></td>
                         </tr>
                         <tr>
-                            <td><input type="number" id="firstBox" class="input" size="10%" oninput="changeValue(secondBox)" autocomplete="off"></td>
+                            <td id="leftContext"></td>
+                            <td id="box"><input type="number" id="firstBox" class="input" size="10%" oninput="changeValue(secondBox)" autocomplete="off"></td>
                             <td><text>:</text></td>
-                            <td><input type="number" id="secondBox" class="input" size="10%" oninput="changeValue(firstBox)" autocomplete="off"></td>
-                            
+                            <td id="box"><input type="number" id="secondBox" class="input" size="10%" oninput="changeValue(firstBox)" autocomplete="off"></td>
+                            <td id="rightContext"></td>
                         </tr>
                     </table>
                     <button onclick="calculateValue()">Summit</button>

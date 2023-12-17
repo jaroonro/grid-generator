@@ -41,7 +41,8 @@ const warning = document.getElementById("warning");
 const firstBox = document.getElementById("firstBox");
 const secondBox = document.getElementById("secondBox");
 const context = document.getElementById("sizeContext");
-
+const leftcontext = document.getElementById("leftContext");
+const rightcontext = document.getElementById("rightContext");
 function popup(x){
     context.innerHTML = "Available ";
     
@@ -52,8 +53,16 @@ function popup(x){
     squareNo = x;
     const crect =document.getElementById(`rect${x}`);
     console.log(splitType);
-    if (splitType == "width") context.innerHTML += `column(s): ${Math.round(parseInt(crect.getAttribute(splitType))*3/xdivisor)}`;
-    else context.innerHTML += `row(s): ${Math.round(parseInt(crect.getAttribute(splitType))*3/ydivisor)}`;
+    if (splitType == "width") {
+        context.innerHTML += `column(s): ${Math.round(parseInt(crect.getAttribute(splitType))*3/xdivisor)}`;
+        leftcontext.innerHTML = "left:";
+        rightcontext.innerHTML = ":right"
+    }
+    else {
+        context.innerHTML += `row(s): ${Math.round(parseInt(crect.getAttribute(splitType))*3/ydivisor)}`;
+        leftcontext.innerHTML = "top:";
+        rightcontext.innerHTML = ":bottom"
+    }
     
     console.log(canvaArray);
 }

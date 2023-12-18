@@ -1,7 +1,7 @@
 const svg = document.getElementById("canva");
 let squareNo;
 let squares = 1;
-let canvaArray = Array.from({length: 3}, _ => new Array(3).fill("area1"));
+let canvaArray = Array.from({length: 3}, _ => new Array(3).fill("a1"));
 
 /* ----- Divisor ----- */
 let xdivisor=640;
